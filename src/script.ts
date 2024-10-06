@@ -45,7 +45,7 @@ const products: Product[] = [
     id: 1,
     name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
     brand: "Hodo Foods",
-    image: "img/p-p-1.png",
+    image: "src/img/p-p-1.png",
     price: 2.51,
     originalPrice: 3.00,
     weight: "500 gram",
@@ -55,7 +55,7 @@ const products: Product[] = [
     id: 2,
     name: "All Natural Italian-Style Chicken Meatballs",
     brand: "Hodo Foods",
-    image: "img/p-p-2.png",
+    image: "/src/img/p-p-2.png",
     price: 2.51,
     originalPrice: 3.00,
     weight: "500 gram",
@@ -65,7 +65,7 @@ const products: Product[] = [
     id: 3,
     name: "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
     brand: "Hodo Foods",
-    image: "img/p-p3.png",
+    image: "/src/img/p-p3.png",
     price: 2.51,
     originalPrice: 3.00,
     weight: "500 gram",
@@ -75,7 +75,7 @@ const products: Product[] = [
     id: 4,
     name: "Foster Farms Takeout Crispy Classic Buffalo Wings",
     brand: "Hodo Foods",
-    image: "img/p-p-4.png",
+    image: "/src/img/p-p-4.png",
     price: 2.51,
     originalPrice: 3.00,
     weight: "500 gram",
@@ -84,7 +84,7 @@ const products: Product[] = [
     id: 5,
     name: "Blue Diamond Almonds Lightly Salted Vegetables",
     brand: "Hodo Foods",
-    image: "img/p-p-5.png",
+    image: "/src/img/p-p-5.png",
     price: 2.51,
     originalPrice: 3.00,
     weight: "500 gram",
@@ -105,7 +105,7 @@ function createOfferCard(product: Product): string {
       <p class="text-TextBody text-sm mt-2">${product.brand}</p>
       <h3 class="mt-2 text-md font-semibold text-center">${product.name}</h3>
       <a href="" class="hover:transition-all mt-2">
-        <img src="./img/star-vote.png" alt="Rating" />
+        <img src="/src/img/star-vote.png" alt="Rating" />
       </a>
       <p class="text-gray-500 text-sm mt-1">${product.weight}</p>
       
@@ -136,7 +136,7 @@ function createProductCard(product: Product): string {
       <p class="text-TextBody text-sm">${product.brand}</p>
       <h3 class="mt-4 text-md font-semibold">${product.name}</h3>
       <a href="" class="hover:transition-all">
-        <img src="./img/star-vote.png" alt="Rating" />
+        <img src="src/img/star-vote.png" alt="Rating" />
       </a>
       <p class="text-gray-500 text-sm">${product.weight}</p>
       <div class="space-x-4">
