@@ -1,0 +1,54 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif !important
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+@layer components{
+  .btn-normal {
+    @apply rounded-lg bg-SuccessColor text-white text-xs px-8 py-3
+  }
+  .btn-hover {
+    @apply rounded-lg bg-ScaleBrannd1 text-white text-xs px-8 py-3
+
+  }
+  .btn-outline {
+    @apply rounded-lg bg-white text-SuccessColor text-xs px-8 py-3 border-2 border-SuccessColor shadow-md
+
+  }
+  .btn-shadow {
+    @apply rounded-lg shadow-md text-SuccessColor text-xs px-8 py-3
+
+  }
+  .btn-load-more {
+    @apply rounded-xl shadow-md text-white text-xs px-10 py-2  bg-SuccessColor 
+
+  }
+  .btn-add-to-cart {
+    @apply rounded-sm text-white text-xs px-10 py-2  bg-SuccessColor 
+
+  }
+  .btn-add-to-cart-small {
+    @apply rounded-sm text-white text-xs px-5 py-2  bg-SuccessColor 
+
+  }
+  .mini-list-item {
+    @apply flex items-center border-2 py-2 px-0.5 lg:px-5 my-2 hover:shadow-lg hover:border-BrandColor1 rounded-md text-xs lg:text-base lg:font-bold font-medium
+  }
+  .mini-list-item-hamburgur-menu {
+    @apply flex items-center  py-2 px-0.5 lg:px-5 my-2 hover:shadow-lg hover:border-BrandColor1  text-xs lg:text-base lg:font-bold font-medium
+  }
+
+}
+.swiper-slide {
+  height: auto !important
+}

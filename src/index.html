@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Shop | HomePage</title>
+    <link href="./stylesheet.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./img/Favicon/Icons/Group.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <section class="section-header container">
+      <div class="flex items-center lg:justify-between justify-around">
+        <div><img src="./img/Logo.png" alt="logo" /></div>
+        <div class="flex items-center space-x-3">
+          <input
+            type="text"
+            class="border-2 h-9 rounded-md border-BrandColor1 w-96 hidden md:flex"
+          />
+
+          <img
+            src="img/icons/fi-rs-search.png"
+            class="w-5 hidden md:flex"
+            alt=""
+          />
+        </div>
+        <div class="flex items-center text-TextBody">
+          <img src="img/icons/fi-rs-user.png" alt="" class="w-4" /><span
+            class="mr-5 text-sm hidden lg:flex"
+            >Account</span
+          >
+          <img src="img/icons/fi-rs-shopping-cart.png" class="w-4" alt="" />
+          <span class="text-sm hidden lg:flex">Cart</span>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Navbar -->
+    <section class="navbar-section container">
+      <div class="flex items-center justify-between mx-2 my-5">
+        <div class="flex flex-col items-center">
+          <button
+            class="btn-add-to-cart lg:flex items-center space-x-3 hidden"
+            id="browse-category"
+          >
+            <img src="img/icons/fi-rs-apps.png" alt="" class="w-4" />
+            <p>Browse All Categories</p>
+            <img src="img/icons/Vectors/fi-rs-angle-small-down.png" alt="" />
+          </button>
+          <!-- category browse list -->
+          <div
+            class="category-mini-list top-36 absolute z-30 hidden"
+            id="mini-list"
+          >
+            <div
+              class="canvas grid grid-cols-2 gap-10 bg-white rounded-lg border-2 border-SuccessColor p-4 text-TextHeading"
+            >
+              <div>
+                <ul class="">
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-1.png" alt="" class="w-5" /> Milk
+                      and Dairies</a
+                    >
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img
+                        src="img/icons/g-2.png"
+                        alt=""
+                        class="w-5"
+                      />Clothing & beauty</a
+                    >
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-3.png" alt="" class="w-5" />Pet
+                      Foods & Toy
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-4.png" alt="" class="w-5" />Baking
+                      Material
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-5.png" alt="" class="w-5" />Fresh
+                      Fruit
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-6.png" alt="" class="w-5" />Wine &
+                      Drinks
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-7.png" alt="" class="w-5" />Fresh
+                      Seafood
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-8.png" alt="" class="w-5" />Fast
+                      Food
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img
+                        src="img/icons/g-9.png"
+                        alt=""
+                        class="w-5"
+                      />Vegtables
+                    </a>
+                  </li>
+                  <li class="mini-list-item">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-10.png" alt="" class="w-5" />Bread
+                      and Juice
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- category browse list -->
+        </div>
+
+        <button class="text-lg flex lg:hidden absolute left-1" id="openMenu">
+          ☰
+        </button>
+        <a href="">
+          <img
+            src="img/icons/fi-rs-search.png"
+            class="w-5 md:hidden"
+            alt=""
+            id="search-bar"
+        /></a>
+        <input
+          type="text"
+          class="border-2 h-9 rounded-md border-BrandColor1 w-96 hidden"
+          id="search-input"
+        />
+
+        <div
+          class="hidden offcanvas my-4 fixed top-0 left-[-100] h-full bg-white text-gray-500 w-4/5 max-w-[480px] transition-all z-[999] flex-col items-center justify-center"
+          id="menu"
+        >
+          <button
+            class="text-lg bg-transparent text-gray-900 absolute top-0 right-[20px] cursor-pointer"
+            id="closeMenu"
+          >
+            ×
+          </button>
+          <nav class="flex flex-col items-start">
+            <button
+              class="btn-add-to-cart flex items-center space-x-3 mb-5"
+              id="btn-browse-menu"
+            >
+              <img src="img/icons/fi-rs-apps.png" alt="" class="w-4" />
+              <p>Browse All Categories</p>
+              <img src="img/icons/Vectors/fi-rs-angle-small-down.png" alt="" />
+            </button>
+            <!-- category browse list -->
+            <div
+              class="category-mini-list hidden"
+              id="mini-list-hamburgur-menu"
+            >
+              <div
+                class="canvas grid grid-cols-2 bg-white rounded-lg px-2 text-TextHeading"
+              >
+                <ul class="">
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-1.png" alt="" class="w-5" /> Milk
+                      and Dairies</a
+                    >
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img
+                        src="img/icons/g-2.png"
+                        alt=""
+                        class="w-5"
+                      />Clothing & beauty</a
+                    >
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-3.png" alt="" class="w-5" />Pet
+                      Foods & Toy
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-4.png" alt="" class="w-5" />Baking
+                      Material
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-5.png" alt="" class="w-5" />Fresh
+                      Fruit
+                    </a>
+                  </li>
+
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-6.png" alt="" class="w-5" />Wine &
+                      Drinks
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-7.png" alt="" class="w-5" />Fresh
+                      Seafood
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-8.png" alt="" class="w-5" />Fast
+                      Food
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img
+                        src="img/icons/g-9.png"
+                        alt=""
+                        class="w-5"
+                      />Vegtables
+                    </a>
+                  </li>
+                  <li class="mini-list-item-hamburgur-menu">
+                    <a href="" class="flex gap-2"
+                      ><img src="img/icons/g-10.png" alt="" class="w-5" />Bread
+                      and Juice
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- category browse list -->
+            <ul
+              class="list-none space-x-5 text-sm text-TextHeading font-semibold"
+              id="hamburger-nav"
+            >
+              <a href=""
+                ><li class="flex items-center">
+                  <img
+                    src="img/icons/fi-rs-flame 1.png"
+                    alt=""
+                    class="w-4 mr-1"
+                  />
+                  Hot Deals
+                </li></a
+              >
+              <a href=""> <li>Home</li></a>
+              <a href=""> <li>Vegtables</li></a>
+              <a href=""><li>Drink</li></a>
+            </ul>
+          </nav>
+        </div>
+        <div
+          class="fixed top-0 left-0 w-full h-full bg-gray-200 z-[998] hidden"
+          id="overlay"
+        ></div>
+
+        <ul
+          class="hidden list-none lg:flex space-x-5 text-sm text-TextHeading font-semibold"
+        >
+          <a href=""
+            ><li class="flex items-center">
+              <img src="img/icons/fi-rs-flame 1.png" alt="" class="w-4 mr-1" />
+              Hot Deals
+            </li></a
+          >
+          <a href=""> <li>Home</li></a>
+          <a href=""> <li>Vegtables</li></a>
+          <a href=""><li>Drink</li></a>
+        </ul>
+
+        <div class="lg:flex items-center hidden">
+          <img src="./img/icons/headphone.png" alt="" class="mr-5" />
+          <div>
+            <a href="tel:+1900888" class="text-BrandColor1 font-bold text-2xl"
+              >1900-888
+            </a>
+            <p class="text-TextBody">24/7 Support Center</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Hero -->
+    <section class="hero-section container">
+      <div class="relative mx- my-20">
+        <img src="img/hero-img.png" alt="" class="my-12" />
+        <div
+          class="flex flex-col space-y-10 absolute top-0 lg:top-32 left-10 lg:left-10"
+        >
+          <h1 class="text-TextHeading font-extrabold text-xl lg:text-6xl">
+            Don’t miss amazing <br />
+            grocery deals
+          </h1>
+          <p class="text-TextBody hidden lg:flex text-3xl">
+            Sign up for the daily newsletter
+          </p>
+          <div class="lg:flex items-center relative hidden">
+            <img src="img/sub-mail.png" alt="" class="absolute left-1" />
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="border-2 py-3 px-10 rounded-lg"
+            />
+            <button class="btn-load-more py-4 absolute left-52">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Categories -->
+    <section class="featured-categories-section container">
+      <h2 class="font-bold text-TextHeading text-xl mb-10 mx-2">
+        Featured Categories
+      </h2>
+
+      <div
+        class="grid grid-cols-2 lg:grid-cols-9 md:grid-cols-4 sm:grid-cols-3 gap-4 mb-5 mx-2"
+      >
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3"
+        >
+          <img src="img/category-1.png" alt="Cake & Milk" />
+          <h2 class="text-TextHeading font-bold">Cake & Milk</h2>
+          <p class="text-TextBody text-sm">14 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-orange-200/15 shadow-orange-300/20"
+        >
+          <img src="img/category-2.png" alt="Peach" />
+          <h2 class="text-TextHeading font-bold">Peach</h2>
+          <p class="text-TextBody text-sm">17 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-blue-200/15 shadow-blue-300/20"
+        >
+          <img src="img/category-3.png" alt="Organic Kiwi" />
+          <h2 class="text-TextHeading font-bold">Organic Kiwi</h2>
+          <p class="text-TextBody text-sm">21 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-red-400/15 shadow-red-500/20"
+        >
+          <img src="img/category-4.png" alt="Red Apple" />
+          <h2 class="text-TextHeading font-bold">Red Apple</h2>
+          <p class="text-TextBody text-sm">68 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-pink-300/15 shadow-pink-500/20"
+        >
+          <img src="img/category-5.png" alt="Snack" />
+          <h2 class="text-TextHeading font-bold">Snack</h2>
+          <p class="text-TextBody text-sm">34 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-purple-400/15 shadow-purple-500/20"
+        >
+          <img src="img/category-6.png" alt="Black Plum" />
+          <h2 class="text-TextHeading font-bold">Black Plum</h2>
+          <p class="text-TextBody text-sm">25 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-green-500/15 shadow-green-500/20"
+        >
+          <img src="img/category-7.png" alt="Vegetables" />
+          <h2 class="text-TextHeading font-bold">Vegetables</h2>
+          <p class="text-TextBody text-sm">65 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-pink-300/15 shadow-pink-500/20"
+        >
+          <img src="img/category-8.png" alt="Headphones" />
+          <h2 class="text-TextHeading font-bold">Headphones</h2>
+          <p class="text-TextBody text-sm">33 items</p>
+        </div>
+
+        <div
+          class="category-item text-center shadow-lg hover:border-2 border-BrandColor1 rounded-md p-3 bg-orange-400/15 shadow-orange-500/20"
+        >
+          <img src="img/category-10.png" alt="Orange" />
+          <h2 class="text-TextHeading font-bold">Orange</h2>
+          <p class="text-TextBody text-sm">63 items</p>
+        </div>
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper my-10">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide relative">
+            <h3
+              class="absolute top-10 left-10 text-lg text-TextHeading font-semibold"
+            >
+              Everyday Fresh & <br />
+              Clean with Our <br />
+              Products
+            </h3>
+            <button
+              class="btn-normal absolute bottom-2 left-5 font-bold hover:bg-ScaleBrannd1"
+            >
+              Shop Now
+            </button>
+            <img
+              src="img/img1-swiper.png"
+              alt="Swiper Image 1"
+              class="w-full h-full rounded-md"
+            />
+          </div>
+
+          <div class="swiper-slide bg-purple-200 rounded-md relative">
+            <h3
+              class="absolute top-10 right-10 text-lg text-TextHeading font-semibold"
+            >
+              Make your Breakfast <br />
+              Healthy and Easy
+            </h3>
+            <button
+              class="btn-normal absolute bottom-5 right-10 font-bold hover:bg-ScaleBrannd1"
+            >
+              Shop Now
+            </button>
+            <img
+              src="img/img2-swiper.png"
+              alt="Swiper Image 2"
+              class="lg:h-44 p-4"
+            />
+          </div>
+
+          <div class="swiper-slide relative">
+            <h3
+              class="absolute top-10 left-10 text-lg text-TextHeading font-semibold"
+            >
+              The best Organic <br />
+              Products Online
+            </h3>
+            <button
+              class="btn-normal bg-BrandColor2 absolute bottom-2 left-5 font-bold hover:bg-WarningColor"
+            >
+              Shop Now
+            </button>
+            <img
+              src="img/img3-swiper.png"
+              alt="Swiper Image 3"
+              class="h-full w-full rounded-md"
+            />
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </section>
+    <!-- Popular Products -->
+    <section class="py-12 px-6 container">
+      <h2 class="text-2xl font-bold mb-6">Popular Products</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper popular-products"></div>
+      </div>
+    </section>
+
+    <!-- Popular Fruits -->
+    <section class="py-12 px-6 container">
+      <h2 class="text-2xl font-bold mb-6">Popular Fruits</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper popular-fruits"></div>
+      </div>
+    </section>
+    <!-- Offers -->
+    <section class="py-12 px-6 container">
+      <h2 class="text-3xl font-bold mb-8 mt-10">Our Offers</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper offer-cards">
+          <!-- Left Banner -->
+          <div
+            class="swiper-slide p-6 rounded-lg flex justify-center text-center relative"
+          >
+            <img
+              src="./img/banner.png"
+              alt="Banner"
+              class="w-full h-50 object-cover rounded-lg"
+            />
+            <h3 class="text-2xl font-bold absolute top-20 left-10">
+              Bring nature <br />
+              into your home
+            </h3>
+            <button
+              class="bg-BrandColor2 text-white px-4 py-2 rounded-lg absolute bottom-10 left-10"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Deals of the Days Section -->
+    <section class="py-12 px-6 container">
+      <h2 class="text-3xl font-bold mb-8">Deals of the Days</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Deal Card 1 -->
+          <div class="swiper-slide bg-white p-4 shadow-lg rounded-lg">
+            <img
+              src="./img/deal1.png"
+              alt="Deal Image"
+              class="h-32 w-full object-cover mb-4"
+            />
+            <div class="text-Scale2 text-sm font-bold absolute top-20 left-8">
+              <span class="bg-white p-3 rounded-lg">05 Days</span>
+              <span class="bg-white p-3 rounded-lg">06 Hours </span>
+              <span class="bg-white p-3 rounded-lg">56 Mins</span>
+              <span class="bg-white p-3 rounded-lg"> 18 Sec</span>
+            </div>
+            <p class="text-TextBody text-sm">Hodo Foods</p>
+            <h3 class="mt-4 text-md font-semibold">
+              Seeds of Change Organic Quinoa, Brown, & Red Rice
+            </h3>
+            <a href="" class="hover:transition-all"
+              ><img src="./img/star-vote.png" alt=""
+            /></a>
+            <p class="text-gray-500 text-sm">500 gram</p>
+            <div class="space-x-4">
+              <span class="text-xl font-bold text-BrandColor1">$2.51</span>
+              <span class="text-gray-400 line-through ml-2">$3.00</span>
+              <button
+                class="px-3 bg-[#d6f1e6] text-BrandColor1 py-2 rounded-lg hover:bg-SuccessColor hover:text-white"
+              >
+                Add +
+              </button>
+            </div>
+          </div>
+
+          <!-- Deal Card 1 -->
+          <div class="swiper-slide bg-white p-4 shadow-lg rounded-lg">
+            <img
+              src="./img/deal2.png"
+              alt="Deal Image"
+              class="h-32 w-full object-cover mb-4"
+            />
+            <div class="text-Scale2 text-sm font-bold absolute top-20 left-8">
+              <span class="bg-white p-3 rounded-lg">05 Days</span>
+              <span class="bg-white p-3 rounded-lg">06 Hours </span>
+              <span class="bg-white p-3 rounded-lg">56 Mins</span>
+              <span class="bg-white p-3 rounded-lg"> 18 Sec</span>
+            </div>
+            <p class="text-TextBody text-sm">Hodo Foods</p>
+            <h3 class="mt-4 text-md font-semibold">
+              Perdue Simply Smart Organics Gluten Free Breaded
+            </h3>
+            <a href="" class="hover:transition-all"
+              ><img src="./img/star-vote.png" alt=""
+            /></a>
+            <p class="text-gray-500 text-sm">500 gram</p>
+            <div class="space-x-4">
+              <span class="text-xl font-bold text-BrandColor1">$2.51</span>
+              <span class="text-gray-400 line-through ml-2">$3.00</span>
+              <button
+                class="px-3 bg-[#d6f1e6] text-BrandColor1 py-2 rounded-lg hover:bg-SuccessColor hover:text-white"
+              >
+                Add +
+              </button>
+            </div>
+          </div>
+
+          <!-- Deal Card 1 -->
+          <div class="swiper-slide bg-white p-4 shadow-lg rounded-lg">
+            <img
+              src="./img/deal3.png"
+              alt="Deal Image"
+              class="h-32 w-full object-cover mb-4"
+            />
+            <div class="text-Scale2 text-sm font-bold absolute top-20 left-8">
+              <span class="bg-white p-3 rounded-lg">05 Days</span>
+              <span class="bg-white p-3 rounded-lg">06 Hours </span>
+              <span class="bg-white p-3 rounded-lg">56 Mins</span>
+              <span class="bg-white p-3 rounded-lg"> 18 Sec</span>
+            </div>
+            <p class="text-TextBody text-sm">Hodo Foods</p>
+            <h3 class="mt-4 text-md font-semibold">
+              Signature Wood-Fired Mushroom and Caramelized Red Onion
+            </h3>
+            <a href="" class="hover:transition-all"
+              ><img src="./img/star-vote.png" alt=""
+            /></a>
+            <p class="text-gray-500 text-sm">500 gram</p>
+            <div class="space-x-4">
+              <span class="text-xl font-bold text-BrandColor1">$2.51</span>
+              <span class="text-gray-400 line-through ml-2">$3.00</span>
+              <button
+                class="px-3 bg-[#d6f1e6] text-BrandColor1 py-2 rounded-lg hover:bg-SuccessColor hover:text-white"
+              >
+                Add +
+              </button>
+            </div>
+          </div>
+
+          <!-- Deal Card 1 -->
+          <div class="swiper-slide bg-white p-4 shadow-lg rounded-lg">
+            <img
+              src="./img/deal4.png"
+              alt="Deal Image"
+              class="h-32 w-full object-cover mb-4"
+            />
+            <div class="text-Scale2 text-sm font-bold absolute top-20 left-8">
+              <span class="bg-white p-3 rounded-lg">05 Days</span>
+              <span class="bg-white p-3 rounded-lg">06 Hours </span>
+              <span class="bg-white p-3 rounded-lg">56 Mins</span>
+              <span class="bg-white p-3 rounded-lg"> 18 Sec</span>
+            </div>
+            <p class="text-TextBody text-sm">Hodo Foods</p>
+            <h3 class="mt-4 text-md font-semibold">
+              Simply Lemonade with Raspberry Juice
+            </h3>
+            <a href="" class="hover:transition-all"
+              ><img src="./img/star-vote.png" alt=""
+            /></a>
+            <p class="text-gray-500 text-sm">500 gram</p>
+            <div class="space-x-4">
+              <span class="text-xl font-bold text-BrandColor1">$2.51</span>
+              <span class="text-gray-400 line-through ml-2">$3.00</span>
+              <button
+                class="px-3 bg-[#d6f1e6] text-BrandColor1 py-2 rounded-lg hover:bg-SuccessColor hover:text-white"
+              >
+                Add +
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- Top Selling -->
+    <section class="py-12 px-6 container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1: Top Selling -->
+          <div class="swiper-slide">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Top Selling</h3>
+              <div class="grid grid-cols-1 gap-6">
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/top1.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Nestle Original Coffee-Mate Coffee Creamer
+                    </h4>
+                    <a href="" class="hover:transition-all"
+                      ><img src="./img/star-vote.png" alt=""
+                    /></a>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/top2.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Organic 100% Grassfed 85_15 Ground Beef
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/top3.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Naturally Flavored Salted Caramel Light Roast Coffee
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Trending Products -->
+          <div class="swiper-slide">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Trending Products</h3>
+              <div class="grid grid-cols-1 gap-6">
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/trend1.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Organic Cage-Free Grade A Large Brown Eggs
+                    </h4>
+                    <a href="" class="hover:transition-all"
+                      ><img src="./img/star-vote.png" alt=""
+                    /></a>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/trend2.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Seeds of Change Organic Quinoa, Brown, & Red Rice
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/trend3.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Naturally Flavored Cinnamon Vanilla Light Roast Coffee
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Recently Added -->
+          <div class="swiper-slide">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Recently Added</h3>
+              <div class="grid grid-cols-1 gap-6">
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/recent1.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Organic Frozen Triple Berry Blend
+                    </h4>
+                    <a href="" class="hover:transition-all"
+                      ><img src="./img/star-vote.png" alt=""
+                    /></a>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/recent2.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Pepperidge Farm Farmhouse Hearty White Bread
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/recent3.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Oroweat Country Buttermilk Bread
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Top Rated -->
+          <div class="swiper-slide">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Top Rated</h3>
+              <div class="grid grid-cols-1 gap-6">
+                <div
+                  class="bg-white p-4 shadow-lg rounded-lg flex justify-between items-center"
+                >
+                  <div>
+                    <img
+                      src="./img/rated1.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Foster Farms Takeout Crispy Classic Buffalo Wings
+                    </h4>
+                    <a href="" class="hover:transition-all"
+                      ><img src="./img/star-vote.png" alt=""
+                    /></a>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/rated2.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      Angie’s Boomchickapop Sweet & Salty Kettle Corn
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+                <div class="bg-white p-4 shadow-lg rounded-lg flex">
+                  <div>
+                    <img
+                      src="./img/rated3.png"
+                      alt="Product Image"
+                      class="rounded-lg mb-4"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-md mb-1">
+                      All Natural Italian-Style Chicken Meatballs
+                    </h4>
+                    <div class="text-green-600 font-bold text-lg">
+                      $2.51
+                      <span class="line-through text-gray-400">$2.80</span>
+                    </div>
+                    <p class="text-gray-500">(4.0)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Pagination and Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <!-- Top Selling -->
+    <!-- Footer Banner -->
+    <section class="container">
+      <div
+        class="relative mb-20 bg-slate-200 p-16 flex flex-row-reverse items-center rounded-xl bg-[url('./img/bg-man-with-fruit.png')]"
+      >
+        <div class="">
+          <img src="./img/man-with-basket-fruit.png" alt="" />
+        </div>
+        <div class="hidden lg:flex items-center flex-col">
+          <img src="./img/fruit-basket.png" alt="" class="w-44" />
+          <img src="./img/fruit-basket3.png" alt="" class="w-32" />
+        </div>
+        <div>
+          <h2 class="lg:text-4xl mb-5 font-semibold">
+            Stay home & get your daily needs from our shop
+          </h2>
+          <p class="hidden lg:flex">Start You'r Daily Sopping with Nest Mart</p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Banner -->
+    <!-- Footer -->
+    <section class="container p-5">
+      <div class="grid grid-cols-1 lg:grid-cols-4 mb-20 gap-4 items-center">
+        <div class="flex flex-col items-start gap-3">
+          <img src="./img/Logo.png" alt="" />
+          <p>Pellentesque posuere orci lobortis</p>
+          <p>
+            <strong>Address:</strong> 5171 W Campbell Ave undefined Kent, Utah
+            53127 United States
+          </p>
+          <p><strong>Call Us: </strong> (+91) - 540-025-124553</p>
+          <p><strong>Email:</strong> contact@nestmart.com</p>
+          <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+        </div>
+        <!-- Accardion -->
+        <div class="accordion lg:hidden flex flex-col" id="accordion1 ">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <h3 class="text-lg font-semibold mb-5">Company</h3>
+            </button>
+            <div class="accordion-content">
+              <nav>
+                <ul class="flex flex-col gap-2">
+                  <li>About Us</li>
+                  <li>Delivery Information</li>
+                  <li>Privacy Policy</li>
+                  <li>Terms & Conditions</li>
+                  <li>Contact Us</li>
+                  <li>Support Center</li>
+                  <li>Careers</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <h3 class="text-lg font-semibold my-5">Information</h3>
+            </button>
+            <div class="accordion-content">
+              <nav>
+                <ul class="flex flex-col gap-2">
+                  <li>Search Terms</li>
+                  <li>Advanced Search</li>
+                  <li>Help & FAQ's</li>
+                  <li>Store Location</li>
+                  <li>Orders & Returns</li>
+                  <li>Support Center</li>
+                  <li>Feedback for us</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- Accardion -->
+        <div class="hidden lg:flex flex-col">
+          <h3 class="text-lg font-semibold mb-5">Company</h3>
+          <nav>
+            <ul class="flex flex-col gap-2">
+              <li>About Us</li>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Contact Us</li>
+              <li>Support Center</li>
+              <li>Careers</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="hidden lg:flex flex-col">
+          <h3 class="text-lg font-semibold mb-5">Information</h3>
+          <nav>
+            <ul class="flex flex-col gap-2">
+              <li>Search Terms</li>
+              <li>Advanced Search</li>
+              <li>Help & FAQ's</li>
+              <li>Store Location</li>
+              <li>Orders & Returns</li>
+              <li>Support Center</li>
+              <li>Feedback for us</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="text-TextBody flex flex-col gap-3 items-start">
+          <h3 class="text-TextHeading text-lg font-semibold">
+            Apps & Payments
+          </h3>
+          <p>Install NetMart App from App Store or Google Play</p>
+          <div class="flex gap-3">
+            <img src="./img/store-footer.png" alt="" />
+            <img src="./img/play-footer.png" alt="" />
+          </div>
+          <p>Secured Payment Gateways</p>
+          <div><img src="./img/payment-method 1.png" alt="" /></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <hr />
+        <small class="text-TextBody my-20">All rights reserved </small>
+      </div>
+    </section>
+    <!-- Footer -->
+    <script src="./script.js"></script>
+  </body>
+</html>
